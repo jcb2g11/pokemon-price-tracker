@@ -37,7 +37,7 @@ func init() {
 func main() {
 	// Use paths relative to the project root
 	productsPath := filepath.Join("data", "products.json")
-	outputPath := filepath.Join("static", "output.json")
+	outputPath := filepath.Join("docs", "output.json")
 
 	file, err := os.Open(productsPath)
 	if err != nil {
