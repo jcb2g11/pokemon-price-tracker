@@ -24,8 +24,7 @@ jobs:
           sudo apt-get install -y google-chrome-stable
 
       - name: Run scraper
-        run: |
-          run: go run cmd/main.go
+        run: go run cmd/main.go
 
       - name: Commit and push changes
         run: |
