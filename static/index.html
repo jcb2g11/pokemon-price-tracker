@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pokémon Price Tracker</title>
+  <style>
+    /* Dark mode + layout styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #e0e0e0;
+      margin: 0;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 960px;
+      width: 100%;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #bb86fc;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      cursor: pointer;
+      padding: 10px 20px;
+      border-radius: 5px 5px 0 0;
+      background-color: #1f1f1f;
+      color: #bbbbbb;
+      font-weight: 600;
+      transition: background-color 0.3s, color 0.3s;
+      user-select: none;
+    }
+
+    .tab.active {
+      background-color: #bb86fc;
+      color: #121212;
+      box-shadow: 0 4px 6px rgba(187, 134, 252, 0.5);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #1f1f1f;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid #333;
+      color: #e0e0e0;
+    }
+
+    th.price, td.price {
+      text-align: right;
+    }
+
+    th {
+      background-color: #2c2c2c;
+      font-weight: 600;
+    }
+
+    tbody tr:hover {
+      background-color: #333333;
+    }
+
+    a {
+      color: #bb86fc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .positive {
+      color: #4caf50;
+      font-weight: bold;
+    }
+
+    .negative {
+      color: #cf6679;
+      font-weight: bold;
+    }
+
+    .moderate {
+      color: #fb8c00;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Pokémon Price Tracker</h1>
+
+    <div class="tabs" id="tabs"></div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th class="price">Retail Price</th>
+          <th class="price">Price Trend</th>
+          <th class="price">Change (%)</th>
+          <th>eBay Sold</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+        <!-- Product rows inserted here -->
+      </tbody>
+    </table>
+  <footer style="text-align:center; margin-top: 40px; font-size: 0.9em; color: #888;">
+    <p>Price trend data is sourced from <a href="https://www.cardmarket.com" target="_blank">Cardmarket</a>. This tool was built by Jaycee.</p>
+  </footer>
+  </div>
+
+  <script>
+    // Load the JSON file and populate tabs + table
+    fetch('output.json')
+      .then(response => response.json())
+      .then(data => {
+        const tabsContainer = document.getElementById('tabs');
+        const tableBody = document.getElementById('table-body');
+
+        const categories = Object.keys(data);
+        let activeCategory = categories[0];
+
+        function renderTabs() {
+          tabsContainer.innerHTML = '';
+          categories.forEach(cat => {
+            const tab = document.createElement('div');
+            tab.textContent = cat;
+            tab.className = 'tab' + (cat === activeCategory ? ' active' : '');
+            tab.addEventListener('click', () => {
+              activeCategory = cat;
+              renderTabs();
+              renderTable();
+            });
+            tabsContainer.appendChild(tab);
+          });
+        }
+
+        function renderTable() {
+          tableBody.innerHTML = '';
+          const products = data[activeCategory];
+
+          products.forEach(p => {
+            const tr = document.createElement('tr');
+
+            const tdName = document.createElement('td');
+            const link = document.createElement('a');
+            link.href = p.url;
+            link.target = '_blank';
+            link.textContent = p.name || 'No name found';
+            tdName.appendChild(link);
+            tr.appendChild(tdName);
+
+            const tdFromPrice = document.createElement('td');
+            tdFromPrice.className = 'price';
+            tdFromPrice.textContent = p.fromPrice || '-';
+            tr.appendChild(tdFromPrice);
+
+            const tdPriceTrend = document.createElement('td');
+            tdPriceTrend.className = 'price';
+            tdPriceTrend.textContent = (p.priceTrendVal !== undefined) ? `£${p.priceTrendVal.toFixed(2)}` : '-';
+            tr.appendChild(tdPriceTrend);
+
+            const tdChange = document.createElement('td');
+            tdChange.className = 'price';
+            if (p.changePercent !== undefined) {
+              const cp = p.changePercent;
+              if (cp > 10) {
+                tdChange.innerHTML = `<span class="positive">+${cp.toFixed(2)}%</span>`;
+              } else if (cp > 0) {
+                tdChange.innerHTML = `<span class="moderate">+${cp.toFixed(2)}%</span>`;
+              } else if (cp < 0) {
+                tdChange.innerHTML = `<span class="negative">${cp.toFixed(2)}%</span>`;
+              } else {
+                tdChange.textContent = cp.toFixed(2) + '%';
+              }
+            } else {
+              tdChange.textContent = '-';
+            }
+            tr.appendChild(tdChange);
+
+            const tdEbay = document.createElement('td');
+            if (p.name) {
+              const ebaySearch = `https://www.ebay.co.uk/sch/i.html?_nkw=${encodeURIComponent(p.name)}&_sacat=0&LH_Complete=1&LH_Sold=1`;
+              const ebayLink = document.createElement('a');
+              ebayLink.href = ebaySearch;
+              ebayLink.target = '_blank';
+              ebayLink.textContent = 'View';
+              tdEbay.appendChild(ebayLink);
+            } else {
+              tdEbay.textContent = '-';
+            }
+            tr.appendChild(tdEbay);
+
+            tableBody.appendChild(tr);
+          });
+        }
+
+        renderTabs();
+        renderTable();
+      })
+      .catch(err => {
+        console.error('Failed to load data:', err);
+        document.body.innerHTML = '<p style="color: red; text-align:center;">Failed to load output.json — check your file and server setup.</p>';
+      });
+  </script>
+</body>
+</html>

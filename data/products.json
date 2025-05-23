@@ -1,0 +1,172 @@
+{
+  "PC ETB": [
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Elite-Trainer-Boxes/151-Pokemon-Center-Elite-Trainer-Box?language=1",
+      "fromPrice": "£49.99"
+    },
+   {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Elite-Trainer-Boxes/Prismatic-Evolutions-Pokemon-Center-Elite-Trainer-Box?language=1",
+      "fromPrice": "£54.99"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Elite-Trainer-Boxes/Paldea-Evolved-Pokemon-Center-Elite-Trainer-Box?language=1",
+      "fromPrice": "£49.99"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Elite-Trainer-Boxes/Paradox-Rift-Roaring-Moon-Pokemon-Center-Elite-Trainer-Box?language=1",
+      "fromPrice": "£49.99"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Elite-Trainer-Boxes/Paradox-Rift-Iron-Valiant-Pokemon-Center-Elite-Trainer-Box?language=1",
+      "fromPrice": "£49.99"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Elite-Trainer-Boxes/Surging-Sparks-Pokemon-Center-Elite-Trainer-Box?language=1",
+      "fromPrice": "£54.99"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Elite-Trainer-Boxes/Paldean-Fates-Pokemon-Center-Elite-Trainer-Box?language=1",
+      "fromPrice": "£54.99"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Elite-Trainer-Boxes/Twilight-Masquerade-Pokemon-Center-Elite-Trainer-Box?language=1",
+      "fromPrice": "£54.99"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Elite-Trainer-Boxes/Journey-Together-Pokemon-Center-Elite-Trainer-Box?language=1",
+      "fromPrice": "£54.99"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Elite-Trainer-Boxes/Temporal-Forces-Iron-Leaves-Pokemon-Center-Elite-Trainer-Box?language=1",
+      "fromPrice": "£54.99"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Elite-Trainer-Boxes/Temporal-Forces-Walking-Wake-Pokemon-Center-Elite-Trainer-Box?language=1",
+      "fromPrice": "£54.99"
+    }
+  ],
+
+  "ETB": [
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Elite-Trainer-Boxes/151-Elite-Trainer-Box?language=1",
+      "fromPrice": "£119.95"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Elite-Trainer-Boxes/Prismatic-Evolutions-Elite-Trainer-Box?language=1",
+      "fromPrice": "£59.95"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Elite-Trainer-Boxes/Paldea-Evolved-Elite-Trainer-Box?language=1",
+      "fromPrice": "£49.95"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Elite-Trainer-Boxes/Paradox-Rift-Roaring-Moon-Elite-Trainer-Box?language=1",
+      "fromPrice": "£49.99"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Elite-Trainer-Boxes/Paradox-Rift-Iron-Valiant-Elite-Trainer-Box?language=1",
+      "fromPrice": "£49.99"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Elite-Trainer-Boxes/Surging-Sparks-Elite-Trainer-Box?language=1",
+      "fromPrice": "£49.99"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Elite-Trainer-Boxes/Paldean-Fates-Elite-Trainer-Box?language=1",
+      "fromPrice": "£79.95"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Elite-Trainer-Boxes/Twilight-Masquerade-Elite-Trainer-Box?language=1",
+      "fromPrice": "£49.99"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Elite-Trainer-Boxes/Journey-Together-Elite-Trainer-Box?language=1",
+      "fromPrice": "£49.99"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Elite-Trainer-Boxes/Temporal-Forces-Iron-Leaves-Elite-Trainer-Box?language=1",
+      "fromPrice": "£46.95"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Elite-Trainer-Boxes/Temporal-Forces-Walking-Wake-Elite-Trainer-Box?language=1",
+      "fromPrice": "£46.95"
+    }
+  ],
+  
+  "Booster Boxes": [
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Paldea-Evolved-Booster-Box?language=1",
+      "fromPrice": "£143.64"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Paradox-Rift-Booster-Box?language=1",
+      "fromPrice": "£143.64"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Surging-Sparks-Booster-Box?language=1",
+      "fromPrice": "£143.64"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Twilight-Masquerade-Booster-Box?language=1",
+      "fromPrice": "£143.64"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Journey-Together-Booster-Box?language=1",
+      "fromPrice": "£143.64"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Temporal-Forces-Booster-Box?language=1",
+      "fromPrice": "£143.64"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Fusion-Strike-Booster-Box?language=1",
+      "fromPrice": "£143.64"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Chilling-Reign-Booster-Box?language=1",
+      "fromPrice": "£143.64"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Evolving-Skies-Booster-Box?language=1",
+      "fromPrice": "£143.64"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Battle-Styles-Booster-Box?language=1",
+      "fromPrice": "£143.64"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Astral-Radiance-Booster-Box?language=1",
+      "fromPrice": "£143.64"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Brilliant-Stars-Booster-Box?language=1",
+      "fromPrice": "£143.64"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Lost-Origin-Booster-Box?language=1",
+      "fromPrice": "£143.64"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Obsidian-Flames-Booster-Box?language=1",
+      "fromPrice": "£143.64"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Silver-Tempest-Booster-Box?language=1",
+      "fromPrice": "£143.64"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Stellar-Crown-Booster-Box?language=1",
+      "fromPrice": "£143.64"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Scarlet-Violet-Booster-Box?language=1",
+      "fromPrice": "£143.64"
+    }
+  ],
+    "Specials": [
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Box-Sets/Prismatic-Evolutions-Super-Premium-Collection?language=1",
+      "fromPrice": "£89.99"
+    }
+  ]
+}

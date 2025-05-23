@@ -1,0 +1,21 @@
+# Binaries
+/bin/
+/build/
+/*.exe
+/*.exe~
+/*.dll
+/*.so
+/*.dylib
+
+# Output JSON (optional if you want to exclude output)
+static/output.json
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Go build cache
+bin/
+*.test
