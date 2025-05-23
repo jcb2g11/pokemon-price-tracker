@@ -207,8 +207,8 @@ func fetchWithChrome(url string) (string, error) {
 	ua := userAgents[time.Now().UnixNano()%int64(len(userAgents))]
 
 	opts := append(chromedp.DefaultExecAllocatorOptions[:],
-		chromedp.Flag("headless", true),
-		chromedp.Flag("disable-gpu", true),
+		chromedp.Flag("headless", false),    // non-headless for better evasion
+		chromedp.Flag("disable-gpu", false), // enable GPU
 		chromedp.Flag("no-sandbox", true),
 		chromedp.Flag("disable-software-rasterizer", true),
 		chromedp.UserAgent(ua),
@@ -220,13 +220,15 @@ func fetchWithChrome(url string) (string, error) {
 	ctx, cancel := chromedp.NewContext(allocCtx)
 	defer cancel()
 
-	ctx, cancel = context.WithTimeout(ctx, 30*time.Second)
+	ctx, cancel = context.WithTimeout(ctx, 45*time.Second) // extend timeout for slower pages
 	defer cancel()
 
 	var html string
 	tasks := chromedp.Tasks{
 		chromedp.Navigate(url),
-		chromedp.Sleep(5 * time.Second), // Wait for page content to load
+		chromedp.Sleep(3 * time.Second),
+		chromedp.Evaluate(`window.scrollBy(0, window.innerHeight / 2);`, nil), // scroll halfway down
+		chromedp.Sleep(3 * time.Second),
 		chromedp.OuterHTML("html", &html),
 	}
 
