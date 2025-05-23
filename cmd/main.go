@@ -140,26 +140,42 @@ func parsePrice(price string) float64 {
 }
 
 func scrapeProductData(p *Product) {
-	html, err := fetchWithChrome(p.URL)
-	if err != nil {
-		log.Printf("Chrome fetch failed for %s: %v", p.URL, err)
-		return
+	var html string
+	var err error
+	var title string
+
+	for i := 0; i < 3; i++ { // retry up to 3 times
+		html, err = fetchWithChrome(p.URL)
+		if err != nil {
+			log.Printf("Chrome fetch failed for %s: %v", p.URL, err)
+			return
+		}
+
+		doc, err := goquery.NewDocumentFromReader(strings.NewReader(html))
+		if err != nil {
+			log.Printf("Failed to parse HTML from %s", p.URL)
+			return
+		}
+
+		title = doc.Find("title").First().Text()
+		if !strings.Contains(strings.ToLower(title), "just a moment") {
+			// Success! Break retry loop
+			break
+		}
+
+		log.Printf("Page blocked or loading issue for URL: %s (attempt %d/3), retrying...", p.URL, i+1)
+		time.Sleep(5 * time.Second) // wait before retrying
 	}
 
-	doc, err := goquery.NewDocumentFromReader(strings.NewReader(html))
-	if err != nil {
-		log.Printf("Failed to parse HTML from %s", p.URL)
-		return
-	}
-
-	title := doc.Find("title").First().Text()
 	if strings.Contains(strings.ToLower(title), "just a moment") {
-		log.Printf("Page blocked or not loaded correctly for URL: %s", p.URL)
+		log.Printf("Page blocked or not loaded correctly for URL after retries: %s", p.URL)
 		p.Name = "Blocked or loading issue"
 		return
 	}
+
 	p.Name = strings.TrimSuffix(title, " | Cardmarket")
 
+	doc, _ := goquery.NewDocumentFromReader(strings.NewReader(html))
 	doc.Find("dt").Each(func(i int, s *goquery.Selection) {
 		if strings.TrimSpace(s.Text()) == "Price Trend" {
 			eur := strings.TrimSpace(s.Next().Find("span").Text())
@@ -181,12 +197,21 @@ func scrapeProductData(p *Product) {
 }
 
 func fetchWithChrome(url string) (string, error) {
+	userAgents := []string{
+		"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+		"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Safari/605.1.15",
+		"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36",
+	}
+
+	// Pick a random user agent to reduce detection risk
+	ua := userAgents[time.Now().UnixNano()%int64(len(userAgents))]
+
 	opts := append(chromedp.DefaultExecAllocatorOptions[:],
 		chromedp.Flag("headless", true),
 		chromedp.Flag("disable-gpu", true),
 		chromedp.Flag("no-sandbox", true),
 		chromedp.Flag("disable-software-rasterizer", true),
-		chromedp.UserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"),
+		chromedp.UserAgent(ua),
 	)
 
 	allocCtx, cancel := chromedp.NewExecAllocator(context.Background(), opts...)
@@ -201,12 +226,12 @@ func fetchWithChrome(url string) (string, error) {
 	var html string
 	tasks := chromedp.Tasks{
 		chromedp.Navigate(url),
-		chromedp.Sleep(5 * time.Second),
+		chromedp.Sleep(5 * time.Second), // Wait for page content to load
 		chromedp.OuterHTML("html", &html),
 	}
 
 	if err := chromedp.Run(ctx, tasks); err != nil {
-		return "", err
+		return "", fmt.Errorf("chromedp run error: %w", err)
 	}
 	return html, nil
 }
