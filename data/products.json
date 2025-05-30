@@ -90,6 +90,10 @@
     {
       "url": "https://www.cardmarket.com/en/Pokemon/Products/Elite-Trainer-Boxes/Temporal-Forces-Walking-Wake-Elite-Trainer-Box?language=1",
       "fromPrice": "£46.95"
+    },
+        {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Elite-Trainer-Boxes/Destined-Rivals-Elite-Trainer-Box?language=1",
+      "fromPrice": "£49.99"
     }
   ],
   
@@ -161,12 +165,20 @@
     {
       "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Scarlet-Violet-Booster-Box?language=1",
       "fromPrice": "£143.64"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Destined-Rivals-Booster-Box?language=1",
+      "fromPrice": "£143.64"
     }
   ],
     "Specials": [
     {
       "url": "https://www.cardmarket.com/en/Pokemon/Products/Box-Sets/Prismatic-Evolutions-Super-Premium-Collection?language=1",
       "fromPrice": "£89.99"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Tins/151-Costco-5-Pack-Mini-Tin-Bundle?language=1",
+      "fromPrice": "£41.98"
     }
   ]
 }
