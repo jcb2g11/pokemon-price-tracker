@@ -43,6 +43,10 @@
     {
       "url": "https://www.cardmarket.com/en/Pokemon/Products/Elite-Trainer-Boxes/Temporal-Forces-Walking-Wake-Pokemon-Center-Elite-Trainer-Box?language=1",
       "fromPrice": "£54.99"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Elite-Trainer-Boxes/Destined-Rivals-Pokemon-Center-Elite-Trainer-Box?language=1",
+      "fromPrice": "£54.99"
     }
   ],
 
@@ -180,5 +184,72 @@
       "url": "https://www.cardmarket.com/en/Pokemon/Products/Tins/151-Costco-5-Pack-Mini-Tin-Bundle?language=1",
       "fromPrice": "£41.98"
     }
+  ],
+  "Booster Bundle": [
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Shrouded-Fable-Booster-Bundle-Version-1?language=1",
+      "fromPrice": "£23.94"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/151-Booster-Bundle?language=1",
+      "fromPrice": "£23.94"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Surging-Sparks-Booster-Bundle?language=1",
+      "fromPrice": "£23.94"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Twilight-Masquerade-Booster-Bundle?language=1",
+      "fromPrice": "£23.94"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Journey-Together-Booster-Bundle?language=1",
+      "fromPrice": "£23.94"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Temporal-Forces-Booster-Bundle?language=1",
+      "fromPrice": "£23.94"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Destined-Rivals-Booster-Bundle?language=1",
+      "fromPrice": "£23.94"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Paldea-Evolved-Booster-Bundle?language=1",
+      "fromPrice": "£23.94"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Paradox-Rift-Booster-Bundle?language=1",
+      "fromPrice": "£23.94"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Lost-Origin-Booster-Bundle?language=1",
+      "fromPrice": "£23.94"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Silver-Tempest-Booster-Bundle?language=1",
+      "fromPrice": "£23.94"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Stellar-Crown-Booster-Bundle?language=1",
+      "fromPrice": "£23.94"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Scarlet-Violet-Booster-Bundle?language=1",
+      "fromPrice": "£23.94"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Paldean-Fates-Booster-Bundle?language=1",
+      "fromPrice": "£23.94"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Prismatic-Evolutions-Booster-Bundle?language=1",
+      "fromPrice": "£23.94"
+    },
+    {
+      "url": "https://www.cardmarket.com/en/Pokemon/Products/Booster-Boxes/Obsidian-Flames-Booster-Bundle?language=1",
+      "fromPrice": "£23.94"
+    }
+    
   ]
 }
